@@ -1,6 +1,6 @@
 {
 "Actor": {
-  "types": ["character"],
+  "types": ["character", "npc"],
   "htmlFields": ["biography"],
   "character": {
     "biography": "",
@@ -14,12 +14,60 @@
       "min": 0,
       "max": 5
     },
+	"xp": {
+		"value": 0,
+	},
+	"eide": {
+		"value": 0
+	},
+	"flore": {
+		"value": 0
+	},
+	"lore": {
+		"value": 0
+	},
+	"wyrd": {
+		"value": 0
+	},	
+	"ability": {
+		"value": 0
+	},
+    "stilling": {
+      "value": 0,
+      "min": 0,
+      "max": 108
+    },	
+    "immersion": {
+      "value": 0,
+      "min": 0,
+      "max": 108
+    },	
+    "fugue": {
+      "value": 0,
+      "min": 0,
+      "max": 108
+    },	
+    "burn": {
+      "value": 0,
+      "min": 0,
+      "max": 108
+    },	
+    "wear": {
+      "value": 40,
+      "min": 0,
+      "max": 108
+    },		
     "attributes": {},
     "groups": {}
   }
+  "npc": {
+	  "biography": "",
+	  "attributes": {},
+	  "groups": {}
+  }
 },
 "Item": {
-  "types": ["item"],
+  "types": ["item", "quest", "wound", "power"],
   "htmlFields": ["description"],
   "item": {
     "description": "",
@@ -27,6 +75,56 @@
     "weight": 0,
     "attributes": {},
     "groups": {}
+  },
+  "quest": {
+	  "xp": {
+		  "value": 0,
+		  "min": 0
+	  },
+	  "description": "",
+	  "flavor": "",
+  },
+  "quest_anytime": {
+	  "xp": {
+		  "value": 0,
+		  "min": 0
+	  },
+	  "description": "",
+	  "bonus_conditions": "",
+  },
+  "quest_storyline": {
+	  "xp": {
+		  "value": 0,
+		  "min": 0
+	  },
+	  "description": "",
+	  "flavor": "",
+	  "major_goals": "",
+  },
+  "wound": {
+	  "description": "",
+	  "source_cost": "",
+	  "severity": 0,
+  },
+  "power": {
+	  "source": "",
+	  "level": 0,
+	  "shorter": "",
+	  "long": "",
+	  "extraordinary": false,
+	  "epic": false,
+	  "long-ranged": false,
+	  "automatic": false,
+	  "phantasmagorical": false,
+	  "slow": false,
+	  "time-consuming": false,
+	  "very-time-consuming": false,
+	  "quest": false,
+	  "bleak": false,
+	  "investigation": false,
+	  "planning": false
+	  
+	  
   }
 }
 }

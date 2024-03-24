@@ -1,13 +1,13 @@
 {
-  "id": "worldbuilding",
-  "version": "0.8.2",
-  "title": "Simple World-Building",
-  "url": "https://github.com/foundryvtt/worldbuilding/",
-  "description": "A minimalist game system which provides configurable Actor and Item templates to support free-form system agnostic game-play.",
+  "id": "glitch",
+  "version": "0.0.1",
+  "title": "Glitch",
+  "url": "https://github.com/mryanlooney/glitch",
+  "description": "A minimalist game system for Jenna Moran's Glitch.",
   "license": "LICENSE.txt",
   "authors": [
     {
-      "name": "Atropos",
+      "name": "Mryanlooney",
       "url": "https://foundryvtt.com"
     }
   ],
