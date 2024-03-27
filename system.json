@@ -2,12 +2,12 @@
   "id": "glitch",
   "version": "0.0.1",
   "title": "Glitch",
-  "url": "https://github.com/foundryvtt/worldbuilding/",
-  "description": "Adaption of Jenna Moran's Glitch.",
+  "url": "https://github.com/mryanlooney/glitch",
+  "description": "A minimalist game system for Jenna Moran's Glitch.",
   "license": "LICENSE.txt",
   "authors": [
     {
-      "name": "Loon",
+      "name": "Mryanlooney",
       "url": "https://foundryvtt.com"
     }
   ],
@@ -34,6 +34,5 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
-  "manifest": "https://raw.githubusercontent.com/foundryvtt/worldbuilding/master/system.json",
-  "download": "https://github.com/foundryvtt/worldbuilding/archive/refs/tags/release-082.zip"
+  "manifest": "https://github.com/mryanlooney/glitch/blob/master/system.json",
 }
