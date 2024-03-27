@@ -1,13 +1,13 @@
 {
-  "id": "worldbuilding",
-  "version": "0.8.2",
-  "title": "Simple World-Building",
+  "id": "glitch",
+  "version": "0.0.1",
+  "title": "Glitch",
   "url": "https://github.com/foundryvtt/worldbuilding/",
-  "description": "A minimalist game system which provides configurable Actor and Item templates to support free-form system agnostic game-play.",
+  "description": "Adaption of Jenna Moran's Glitch.",
   "license": "LICENSE.txt",
   "authors": [
     {
-      "name": "Atropos",
+      "name": "Loon",
       "url": "https://foundryvtt.com"
     }
   ],
