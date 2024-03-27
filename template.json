@@ -15,7 +15,7 @@
       "max": 5
     },
 	"xp": {
-		"value": 0,
+		"value": 0
 	},
 	"eide": {
 		"value": 0
@@ -59,7 +59,7 @@
     },		
     "attributes": {},
     "groups": {}
-  }
+  },
   "npc": {
 	  "biography": "",
 	  "attributes": {},
@@ -82,7 +82,7 @@
 		  "min": 0
 	  },
 	  "description": "",
-	  "flavor": "",
+	  "flavor": ""
   },
   "quest_anytime": {
 	  "xp": {
@@ -90,7 +90,7 @@
 		  "min": 0
 	  },
 	  "description": "",
-	  "bonus_conditions": "",
+	  "bonus_conditions": ""
   },
   "quest_storyline": {
 	  "xp": {
@@ -99,12 +99,12 @@
 	  },
 	  "description": "",
 	  "flavor": "",
-	  "major_goals": "",
+	  "major_goals": ""
   },
   "wound": {
 	  "description": "",
 	  "source_cost": "",
-	  "severity": 0,
+	  "severity": 0
   },
   "power": {
 	  "source": "",
