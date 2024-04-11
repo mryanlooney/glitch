@@ -6,12 +6,15 @@
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
             <div class="resource">
-                <label>Quantity</label>
-                <input type="number" name="system.quantity" value="{{systemData.quantity}}"/>
+                <label>Rating</label>
+                <input type="number" name="system.rating" value="{{systemData.rating}}"/>
             </div>
             <div class="resource">
-                <label>Weight</label>
-                <input type="number" name="system.weight" value="{{systemData.weight}}"/>
+                <label>XP</label>
+                <input type="number" name="system.xp" value="{{systemData.xp}}"/>
+				<label>/</label>
+				<input type="number" name="system.xp_goal" value="{{systemData.xp_goal}}"/>
+				
             </div>
         </div>
     </header>
@@ -41,11 +44,11 @@
             </header>
 
             {{!-- Render the attribute list partial. --}}
-            {{> "systems/worldbuilding/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
+            {{> "systems/glitch/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
 
             {{!-- Render the grouped attributes partial and control. --}}
             <div class="groups">
-                {{> "systems/worldbuilding/templates/parts/sheet-groups.html" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
+                {{> "systems/glitch/templates/parts/sheet-groups.html" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
                 <div class="group-controls flexrow">
                     <input class="group-prefix" type="text" value=""/>
                     <a class="button group-control" data-action="create-group"><i class="fas fa-plus"></i>Add Attribute Group</a>

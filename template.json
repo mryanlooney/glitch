@@ -4,6 +4,8 @@
   "htmlFields": ["biography"],
   "character": {
     "biography": "",
+	"bane": "",
+	"technique": "",
     "health": {
       "value": 10,
       "min": 0,
@@ -14,6 +16,9 @@
       "min": 0,
       "max": 5
     },
+	"infection": {
+		"value": 0
+	},
 	"xp": {
 		"value": 0
 	},
@@ -67,10 +72,21 @@
   }
 },
 "Item": {
-  "types": ["item", "quest", "wound", "power"],
+  "types": ["item", "quest_anytime", "quest_storyline"],
   "htmlFields": ["description"],
   "item": {
     "description": "",
+	"rating": {
+		"value": 0,
+	},
+	"xp": {
+		"value": 0,
+		"min": 0,
+	},
+	"xp_goal": {
+		"value": 0,
+		"min": 0,
+	},
     "quantity": 1,
     "weight": 0,
     "attributes": {},

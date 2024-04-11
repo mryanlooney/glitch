@@ -1,8 +1,8 @@
 {
   "id": "glitch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "Glitch",
-  "url": "https://github.com/foundryvtt/worldbuilding/",
+  "url": "https://github.com/mryanlooney/glitch",
   "description": "A minimalist game system which provides configurable Actor and Item templates to support free-form system agnostic game-play.",
   "license": "LICENSE.txt",
   "authors": [

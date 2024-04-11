@@ -11,7 +11,7 @@ export class SimpleItemSheet extends ItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["worldbuilding", "sheet", "item"],
-      template: "systems/worldbuilding/templates/item-sheet.html",
+      template: "systems/glitch/templates/item-sheet.html",
       width: 520,
       height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
@@ -19,6 +19,16 @@ export class SimpleItemSheet extends ItemSheet {
     });
   }
 
+  /** @override */
+  get template() {
+    const path = "systems/glitch/templates";
+    // Return a single sheet for all item types.
+    // return `${path}/item-sheet.html`;
+
+    // Alternatively, you could use the following return statement to do a
+    // unique item sheet by type, like `weapon-sheet.html`.
+    return `${path}/${this.item.type}-sheet.html`;
+  }  
   /* -------------------------------------------- */
 
   /** @inheritdoc */
