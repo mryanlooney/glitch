@@ -77,15 +77,15 @@
   "item": {
     "description": "",
 	"rating": {
-		"value": 0,
+		"value": 0
 	},
 	"xp": {
 		"value": 0,
-		"min": 0,
+		"min": 0
 	},
 	"xp_goal": {
 		"value": 0,
-		"min": 0,
+		"min": 0
 	},
     "quantity": 1,
     "weight": 0,

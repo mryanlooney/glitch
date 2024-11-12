@@ -111,6 +111,44 @@ export class SimpleActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
+  async _displayCard(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    // Render the chat card template
+    let li = $(event.currentTarget).parents(".item");
+    let item = this.actor.items.get(li.data("item-id"));
+    const token = this.actor.token;
+    const templateData = {
+      actor: this.actor,
+      tokenId: token?.uuid || null,
+      item: item,
+      labels: this.labels,
+    };
+    const html = await renderTemplate("systems/glitch/templates/chat-card.html", templateData);
+
+    // Create the ChatMessage data object
+    const chatData = {
+      user: game.user.id,
+      type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+      content: html,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor, token }),
+    };
+
+
+    // Create the Chat Message or return its data
+    return ChatMessage.create(chatData);
+  }
+  
+  async endScene() {
+	  const actorData = duplicate(this.actor);
+	  const data = actorData.system;
+	  data.stilling.value -= Math.max(0, data.stilling.value - 1);
+	  data.immersion.value -= Math.max(0, data.immersion.value - 1);
+	  data.fugue.value -= Math.max(0, data.fugue.value - 1);
+	  data.burn.value -= Math.max(0, data.burn.value - 1);	  
+	  this.actor.update(actorData);
+  }
+  
   /** @inheritdoc */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
