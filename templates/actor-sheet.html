@@ -4,7 +4,7 @@
 	align-items: center;
 	justify-content: left;
 	text-align: center;
-	color: white;
+	<!--color: white;-->
 }
 </style>
 <style>
@@ -15,12 +15,29 @@
 }
 </style>
 <style>
+.flex-right {
+	align-items: center;
+	justify-content: right;
+	text-align: right;
+}
+</style>
+<style>
 .grid-2col {
   display: grid;
   grid-column: span 2 / span 2;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin: 10px 0;
+  gap: 5px 10px;
+  margin: 5px 0;
+  padding: 0;
+}
+</style>
+<style>
+.grid-3col {
+  display: grid;
+  grid-column: span 3 / span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px 10px;
+  margin: 5px 0;
   padding: 0;
 }
 </style>
@@ -29,7 +46,7 @@
   display: grid;
   grid-column: span 4 / span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  gap: 5px;
   margin: 10px 0;
   padding: 0;
 }
@@ -43,7 +60,9 @@
             </h1>
 			<h2 class="charbane grid-2col">
 				<input name="bane" type="text" value="{{data.bane}}" placeholder="Bane" />
+				<!--
 				<input type="number" name="system.infection.value" value="{{systemData.infection.value}}"/>
+				-->
 			</h2>	
 			<h3 class="chartech">
 				<input name="tech" type="text" value="{{data.technique}}" placeholder="Technique" />
@@ -69,40 +88,71 @@
     <section class="sheet-body">
 		{{!-- Resources Tab --}}
 		<div class="tab resources" data-group="primary" data-tab="resources">
+		<!--
 				<div class="resource grid grid-2col flex-center">
 					<label>XP</label>
 					<input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
 				</div>
-				<div class="resource grid grid-4col flex-left">
-					<label>Eide</label>
-					<input type="number" name="system.eide.value" value="{{systemData.eide.value}}"/>
-					<label class="resource-label">Stilling</label>
-					<input type="number" name="system.stilling.value" value="{{systemData.stilling.value}}"/>
+				-->
+				<div class="resource grid grid-3col flex-center">
+					<div class="resource grid">
+						<label>Attributes</label>
+						<div class="resource grid grid-2col flex-center">
+							<label class="flex-right">Eide</label>
+							<input class="input-small" type="number" name="system.eide.value" value="{{systemData.eide.value}}"/>
+						</div>
+						<div class="resource grid grid-2col flex-center">
+							<label class="flex-right">Flore</label>
+							<input type="number" name="system.flore.value" value="{{systemData.flore.value}}"/>
+						</div>						
+						<div class="resource grid grid-2col flex-center">
+							<label class="flex-right">Lore</label>
+							<input type="number" name="system.lore.value" value="{{systemData.lore.value}}"/>
+						</div>			
+						<div class="resource grid grid-2col flex-center">
+							<label class="flex-right">Wyrd</label>
+							<input type="number" name="system.wyrd.value" value="{{systemData.wyrd.value}}"/>
+						</div>
+						<div class="resource grid grid-2col flex-center">
+							<label class="flex-right">Ability</label>
+							<input type="number" name="system.ability.value" value="{{systemData.ability.value}}"/>
+						</div>						
+					</div>
+					<div class="resource grid">
+						<label>Costs</label>
+						<div class="resource grid grid-2col flex-left">
+							<label class="resource-label flex-right">Stilling</label>
+							<input type="number" name="system.stilling.value" value="{{systemData.stilling.value}}"/>
+						</div>	
+						<div class="resource grid grid-2col flex-center">
+							<label class="resource-label flex-right">Immersion</label>
+							<input type="number" name="system.immersion.value" value="{{systemData.immersion.value}}"/>
+						</div>	
+						<div class="resource grid grid-2col flex-center">
+							<label class="resource-label flex-right">Fugue</label>
+							<input type="number" name="system.fugue.value" value="{{systemData.fugue.value}}"/>
+						</div>			
+						<div class="resource grid grid-2col flex-center">
+							<label class="resource-label flex-right">Burn</label>
+							<input type="number" name="system.burn.value" value="{{systemData.burn.value}}"/>
+						</div>
+						<div class="resource grid grid-2col flex-center">
+							<label class="resource-label flex-right">Wear</label>
+							<input type="number" name="system.wear.value" value="{{systemData.wear.value}}"/>
+						</div>						
+					</div>
+					<div class="resource grid">
+						<div class="resource grid grid-2col flex-left">
+							<label class="resource-label flex-right">XP</label>
+							<input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
+						</div>	
+						<div class="resource grid grid-2col flex-left">
+							<label class="resource-label flex-right">Infection</label>
+							<input type="number" name="system.infection.value" value="{{systemData.infection.value}}"/>
+						</div>	
+					</div>
 				</div>
-				<div class="resource grid grid-4col flex-center">
-					<label>Flore</label>
-					<input type="number" name="system.flore.value" value="{{systemData.flore.value}}"/>
-					<label class="resource-label">Immersion</label>
-					<input type="number" name="system.immersion.value" value="{{systemData.immersion.value}}"/>
-				</div>			
-				<div class="resource grid grid-4col flex-center">
-					<label>Lore</label>
-					<input type="number" name="system.lore.value" value="{{systemData.lore.value}}"/>
-					<label class="resource-label">Fugue</label>
-					<input type="number" name="system.fugue.value" value="{{systemData.fugue.value}}"/>
-				</div>			
-				<div class="resource grid grid-4col flex-center">
-					<label>Wyrd</label>
-					<input type="number" name="system.wyrd.value" value="{{systemData.wyrd.value}}"/>
-					<label class="resource-label">Burn</label>
-					<input type="number" name="system.burn.value" value="{{systemData.burn.value}}"/>
-				</div>
-				<div class="resource grid grid-4col flex-center">
-					<label>Ability</label>
-					<input type="number" name="system.ability.value" value="{{systemData.ability.value}}"/>
-					<label class="resource-label">Wear</label>
-					<input type="number" name="system.wear.value" value="{{systemData.wear.value}}"/>
-				</div>
+
 		</div>
         {{!-- Bindings Tab --}}
         <div class="tab items" data-group="primary" data-tab="bindings">

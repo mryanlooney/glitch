@@ -5,17 +5,21 @@
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
-            <div class="resource">
-                <label>Rating</label>
-                <input type="number" name="system.rating" value="{{systemData.rating}}"/>
-            </div>
-            <div class="resource">
-                <label>XP</label>
-                <input type="number" name="system.xp" value="{{systemData.xp}}"/>
-				<label>/</label>
-				<input type="number" name="system.xp_goal" value="{{systemData.xp_goal}}"/>
+			<h2 class="charbane grid-2col">
+				<div class="resource">
+					<label>Rating</label>
+					<input type="number" name="system.rating" value="{{systemData.rating}}"/>
+				</div>
 				
-            </div>
+				<div class="resource">
+					<label>XP</label>
+					<input type="number" name="system.xp" value="{{systemData.xp}}"/>
+					<label>/</label>
+					<input type="number" name="system.xp_goal" value="{{systemData.xp_goal}}"/>
+					
+				</div>
+				
+			</h2>
         </div>
     </header>
 
