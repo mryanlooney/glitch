@@ -107,7 +107,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  flex: 2;
+  flex: 3;
   justify-content: flex-start;
 }
 .worldbuilding .item-list .item-button {

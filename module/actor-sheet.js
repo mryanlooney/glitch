@@ -88,6 +88,8 @@ export class SimpleActorSheet extends ActorSheet {
         return item.sheet.render(true);
       case "delete":
         return item.delete();
+	  case "chat":
+		return _displayCard(event);
     }
   }
 
