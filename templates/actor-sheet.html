@@ -53,26 +53,27 @@
 </style>
     {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
+		<div class="header-fields">
+			<img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
+			<h3 class="charbane grid-2col">
+				<input name="pronouns" type="text" value="{{systemData.pronouns}}" placeholder="Pronouns" />
+			</h3>
+		</div>
+
         <div class="header-fields">
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
 			<h2 class="charbane grid-2col">
-				<input name="bane" type="text" value="{{data.bane}}" placeholder="Bane" />
-				<!--
-				<input type="number" name="system.infection.value" value="{{systemData.infection.value}}"/>
-				-->
+				<input name="system.bane" type="text" value="{{systemData.bane}}" placeholder="Bane" />
 			</h2>	
 			<h3 class="chartech">
-				<input name="tech" type="text" value="{{data.technique}}" placeholder="Technique" />
+				<input name="tech" type="text" value="{{systemData.technique}}" placeholder="Technique" />
 			</h3>
 		</div>
-		<div class="header-fields">
-			<h3 class="chartech">
-				<input name="pronouns" type="text" value="{{data.pronouns}}" placeholder="Pronouns" />
-			</h3>
+        <div class="header-fields">
 		</div>
+
 	</header>	
 			
 
@@ -165,7 +166,11 @@
                 {{#each data.items as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-                    <h4 class="item-name">"{{item.name}}" ({{item.system.rating}}) [{{item.system.description}}]</h4>	
+					{{#ifEquals item.system.description ''}}
+						<h4 class="item-name">"{{item.name}}" ({{item.system.rating}})</h4>					
+					{{else}}
+						<h4 class="item-name">"{{item.name}}" ({{item.system.rating}}) [{{cleanuptext item.system.description}}]</h4>	
+					{{/ifEquals}}
                     {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
                     <div class="item-buttons">
                         {{#each item.system.attributes as |itemAttr key|}}

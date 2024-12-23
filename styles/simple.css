@@ -27,7 +27,7 @@
 }
 .worldbuilding .sheet-header .header-fields {
   flex: 1;
-  height: 100px;
+  height: 110px;
 }
 .worldbuilding .sheet-header h1.charname {
   height: 50px;
@@ -98,15 +98,17 @@
 }
 .worldbuilding .item-list .item-name {
   margin: 0;
+  flex: auto;
 }
 .worldbuilding .item-list .item-controls {
-  flex: 0 0 36px;
+  flex: 0 0 48px;
+  display: block;
 }
 .worldbuilding .item-list .item-buttons {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
-  align-items: center;
+  align-items: right;
   flex: 3;
   justify-content: flex-start;
 }

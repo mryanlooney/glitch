@@ -94,6 +94,16 @@ Hooks.once("init", async function() {
     return value.slugify({strict: true});
   });
 
+  Handlebars.registerHelper('cleanuptext', function(strInputCode) {
+    return strInputCode.replace(/<\/?[^>]+(>|$)/g, "");
+  });
+  
+// add entity sheet functions
+
+  Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
+	return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+  });
+
   // Preload template partials
   await preloadHandlebarsTemplates();
 });
