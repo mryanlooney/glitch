@@ -73,9 +73,15 @@
   }
 },
 "Item": {
-  "types": ["item", "quest_anytime", "quest_storyline"],
+  "types": ["item", "quest", "quest_anytime", "quest_storyline"],
   "htmlFields": ["description"],
+  "templates": {
+	  "base": {
+		  "description": ""
+	  }
+  },
   "item": {
+	"templates": ["base"],
     "description": "",
 	"rating": {
 		"value": 0
@@ -94,6 +100,7 @@
     "groups": {}
   },
   "quest": {
+	  "templates": ["base"],
 	  "xp": {
 		  "value": 0,
 		  "min": 0
