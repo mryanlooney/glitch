@@ -172,7 +172,7 @@ export class EntitySheetHelper {
     const button = event.currentTarget;
     const label = button.closest(".attribute").querySelector(".attribute-label")?.value;
     const chatLabel = label ?? button.parentElement.querySelector(".attribute-key").value;
-    const shorthand = game.settings.get("worldbuilding", "macroShorthand");
+    const shorthand = game.settings.get("glitch", "macroShorthand");
 
     // Use the actor for rollData so that formulas are always in reference to the parent actor.
     const rollData = this.actor.getRollData();
@@ -558,7 +558,7 @@ export class EntitySheetHelper {
         if ( template ) {
           createData = foundry.utils.mergeObject(template.toObject(), createData);
           createData.type = template.type;
-          delete createData.flags.worldbuilding.isTemplate;
+          delete createData.flags.glitch.isTemplate;
         }
 
         // Merge provided override data

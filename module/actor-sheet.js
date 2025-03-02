@@ -10,7 +10,7 @@ export class SimpleActorSheet extends ActorSheet {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["worldbuilding", "sheet", "actor"],
+      classes: ["glitch", "sheet", "actor"],
       template: "systems/glitch/templates/actor-sheet.html",
       width: 600,
       height: 600,
@@ -26,7 +26,7 @@ export class SimpleActorSheet extends ActorSheet {
   async getData(options) {
     const context = await super.getData(options);
     EntitySheetHelper.getAttributeData(context.data);
-    context.shorthand = !!game.settings.get("worldbuilding", "macroShorthand");
+    context.shorthand = !!game.settings.get("glitch", "macroShorthand");
     context.systemData = context.data.system;
     context.dtypes = ATTRIBUTE_TYPES;
     context.biographyHTML = await TextEditor.enrichHTML(context.systemData.biography, {
@@ -149,6 +149,17 @@ export class SimpleActorSheet extends ActorSheet {
 	  data.fugue.value -= Math.max(0, data.fugue.value - 1);
 	  data.burn.value -= Math.max(0, data.burn.value - 1);	  
 	  this.actor.update(actorData);
+  }
+  
+  async allCosts(delta) {
+	  const actorData = duplicate(this.actor);
+	  const data = actorData.system;
+	  data.stilling.value += Math.max(0, data.stilling.value + delta);
+	  data.immersion.value += Math.max(0, data.immersion.value + delta);
+	  data.fugue.value += Math.max(0, data.fugue.value + delta);
+	  data.burn.value += Math.max(0, data.burn.value + delta);
+	  data.wear.value += Math.max(0, data.wear.value + delta);
+	  this.actor.update(actorData);	  
   }
   
   /** @inheritdoc */
